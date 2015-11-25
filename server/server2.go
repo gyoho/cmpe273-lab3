@@ -88,12 +88,6 @@ func main() {
     router.GET("/keys/:key_id", get)
     router.GET("/keys", list)
 
-    log.Println("Server listening on 3000")
-    go http.ListenAndServe(":3000", router)
-
     log.Println("Server listening on 3001")
-    go http.ListenAndServe(":3001", router)
-
-    log.Println("Server listening on 3002")
-    http.ListenAndServe(":3002", router)
+    http.ListenAndServe(":3001", router)
 }
