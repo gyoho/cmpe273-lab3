@@ -23,7 +23,7 @@ func add(rw http.ResponseWriter, _ *http.Request, param httprouter.Params) {
         hashmap[key] = value
         rw.Header().Set("Content-Type", "plain/text")
         rw.WriteHeader(200)
-        fmt.Fprintf(rw, "Added key/value.")
+        fmt.Fprintf(rw, "Added {key:%x, value:%s}", key, value)
     }
 }
 
